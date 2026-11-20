@@ -3,63 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ทดสอบฟังเสียง AI ภาษาไทย</title>
+<title>ช่วยฟังเสียง AI ภาษาไทย · 15 นาที</title>
 <style>
-:root{--ink:#19372e;--muted:#687971;--line:#d8e1d8;--paper:#f7f8f3;--green:#1f5c49;--gold:#b88845}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:15px/1.7 "Avenir Next",Avenir,"Segoe UI",Tahoma,"Noto Sans Thai",sans-serif}
-.stripe{height:6px;background:linear-gradient(90deg,var(--green) 0 80%,var(--gold) 80%)}
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 30px;max-width:460px;width:100%;text-align:center;box-shadow:0 15px 40px rgba(17,52,39,.07)}
-.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.02em;font-size:12px}
-h1{font:400 28px/1.3 Georgia,"Noto Sans Thai",serif;margin:8px 0 10px}
-p{color:var(--muted);margin:0 0 18px}
-.spin{width:34px;height:34px;border:4px solid #dfe9dc;border-top-color:var(--green);border-radius:50%;margin:6px auto 14px;animation:s 1s linear infinite}
-@keyframes s{to{transform:rotate(360deg)}}
-.button{display:block;width:100%;border:1px solid var(--green);background:var(--green);color:#fff;border-radius:11px;padding:14px;font:inherit;font-weight:700;text-decoration:none;margin-top:10px}
-.button.alt{background:#fff;color:var(--green)}
-#manual{display:none}
+:root{--ink:#1d1d24;--muted:#64646e;--line:#e3e3e8;--paper:#f5f5f7;--green:#e3000f;--green2:#c4000d;--gold:#e3000f;--pale:#fdecee}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font:16px/1.7 "Avenir Next",Avenir,"Segoe UI",Tahoma,"Noto Sans Thai",sans-serif}
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#8f000a 0%,#e3000f 55%,#c4000d 100%);color:#fff;padding:56px 22px 120px}
+.wave{position:absolute;right:-30px;bottom:30px;display:flex;align-items:center;gap:7px;opacity:.16}
+.wave i{display:block;width:10px;border-radius:6px;background:#fff;animation:w 1.4s ease-in-out infinite}
+@keyframes w{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.inner{max-width:620px;margin:0 auto;position:relative}
+.pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:5px 14px;font-size:13px;font-weight:700}
+h1{font:400 clamp(34px,6vw,50px)/1.18 Georgia,"Noto Sans Thai",serif;margin:18px 0 12px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:#ffd2d6}
+.lead{font-size:17px;opacity:.88;margin:0;max-width:520px}
+.card{max-width:620px;margin:-84px auto 0;background:#fff;border-radius:22px;box-shadow:0 22px 60px rgba(30,30,40,.12);padding:28px;position:relative}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+.fact{background:var(--paper);border-radius:14px;padding:14px 10px;text-align:center}
+.fact b{display:block;font:400 26px/1.1 Georgia,serif;color:var(--green)}
+.fact span{font-size:13px;color:var(--muted)}
+h2{font-size:16px;margin:0 0 12px}
+ol{list-style:none;padding:0;margin:0 0 24px;counter-reset:s}
+ol li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-top:1px solid #efeff2}
+ol li:first-child{border-top:0}
+ol li::before{content:counter(s);flex:0 0 30px;height:30px;border-radius:50%;background:var(--pale);color:var(--green);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol li b{display:block;font-size:15px}ol li small{color:var(--muted);font-size:13.5px}
+.tip{display:flex;gap:12px;align-items:center;background:#f7f7f9;border:1px solid #e6e6ec;border-radius:14px;padding:12px 15px;font-size:14px;color:#4a4a54;margin-bottom:22px}
+.tip span{font-size:24px}
+.start{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:14px;background:var(--green);color:#fff;font:inherit;font-size:18px;font-weight:800;padding:18px;cursor:pointer;box-shadow:0 10px 24px rgba(227,0,15,.28);transition:transform .15s,background .15s}
+.start:hover:not(:disabled){background:#b8000c;transform:translateY(-1px)}
+.start:disabled{opacity:.7;cursor:default}
+.spin{width:20px;height:20px;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:r .9s linear infinite;display:none}
+.start.busy .spin{display:block}
+@keyframes r{to{transform:rotate(360deg)}}
+.note{text-align:center;color:var(--muted);font-size:13px;margin:12px 0 0}
+#manual{display:none;margin-top:16px;text-align:center}
+#manual p{color:#c2410c;font-size:14px;margin:0 0 10px;font-weight:700}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick a{display:block;border:1.5px solid var(--green);color:var(--green);border-radius:12px;padding:13px;text-decoration:none;font-weight:800}
+.pick a:hover{background:var(--pale)}
+footer{text-align:center;color:#8e8e98;font-size:12px;padding:26px 16px 34px}
+@media(max-width:520px){.wave{opacity:.07}.hero{padding:40px 18px 110px}.card{margin:-80px 12px 0;padding:22px 18px}.fact b{font-size:22px}.fact span{font-size:12px}}
 </style>
 </head>
 <body>
-<div class="stripe"></div>
-<main>
-  <div class="card">
-    <div class="eyebrow">ทดสอบฟังเสียงภาษาไทย</div>
-    <h1>ขอบคุณที่ร่วมทดสอบ</h1>
-    <div id="auto">
-      <div class="spin"></div>
-      <p id="msg">กำลังจัดกลุ่มให้คุณ… อยู่ครู่เดียว</p>
-    </div>
-    <div id="manual">
-      <p>จัดกลุ่มอัตโนมัติไม่สำเร็จ กรุณาเลือกกลุ่มด้านล่าง<br>(ถ้ามีคนแจ้งกลุ่มให้แล้ว ให้เลือกตามที่แจ้ง)</p>
-      <a class="button" href="groupA.html">กลุ่ม A (10 ข้อ)</a>
-      <a class="button alt" href="groupB.html">กลุ่ม B (10 ข้อ)</a>
-    </div>
+<header class="hero">
+  <div class="wave" aria-hidden="true" id="wave"></div>
+  <div class="inner">
+    <span class="pill">🎧 ทดสอบเสียง AI ภาษาไทย</span>
+    <h1>ช่วยฟังหน่อย<br>เสียงไหน <em>ฟังดีกว่ากัน?</em></h1>
+    <p class="lead">ฟังประโยคภาษาไทยที่พูดโดยเสียง AI 2 แบบ แล้วเลือกแบบที่คุณชอบ ความเห็นของคุณจะช่วยทีมพัฒนาเสียงให้เป็นธรรมชาติขึ้น</p>
+  </div>
+</header>
+
+<main class="card">
+  <div class="facts">
+    <div class="fact"><b>10</b><span>ประโยค</span></div>
+    <div class="fact"><b>~15</b><span>นาที</span></div>
+    <div class="fact"><b>A/B</b><span>เลือกที่ชอบ</span></div>
+  </div>
+
+  <h2>ทำยังไง</h2>
+  <ol>
+    <li><div><b>ฟังเสียง A และเสียง B</b><small>ทั้งสองเสียงพูดประโยคเดียวกัน ฟังให้ครบทั้งคู่</small></div></li>
+    <li><div><b>เลือกเสียงที่ชอบมากกว่า</b><small>ไม่มีถูกผิด เลือกตามที่หูคุณรู้สึก (เลือก "พอๆ กัน" ได้)</small></div></li>
+    <li><div><b>ทำให้ครบ 10 ข้อ แล้วกดส่ง</b><small>ให้คะแนนหรือเขียนหมายเหตุเพิ่มได้ ไม่บังคับ</small></div></li>
+  </ol>
+
+  <div class="tip"><span>🎧</span><div><b>แนะนำให้ใส่หูฟัง</b> จะได้ยินวรรณยุกต์และรายละเอียดเสียงชัดขึ้น ปิดแล้วกลับมาทำต่อได้ คำตอบไม่หาย</div></div>
+
+  <button class="start" id="start" type="button"><span class="spin"></span><span id="start-text">เริ่มเลย →</span></button>
+  <p class="note" id="note">ระบบจะจัดชุดประโยคให้คุณอัตโนมัติ</p>
+
+  <div id="manual">
+    <p>จัดชุดอัตโนมัติไม่สำเร็จ กรุณาเลือกเอง (ถ้ามีคนบอกชุดให้แล้ว ให้เลือกตามนั้น)</p>
+    <div class="pick"><a href="groupA.html">ชุด A</a><a href="groupB.html">ชุด B</a></div>
   </div>
 </main>
+
+<footer>ไม่เปิดเผยชื่อระบบเสียง · ข้อมูลใช้ภายในทีมเพื่อพัฒนาคุณภาพเสียงเท่านั้น</footer>
+
 <script>
 "use strict";
 // ===== SETUP: paste your Google Apps Script Web App URL here (ends with /exec) =====
 const SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwuIJVKNl0BVQQIFOmiEeYG4z8MXfH0KAPljUZ7ii1TrK1HwpLlzuiYLm2v4UtQHYuZ/exec";
 // ==================================================================================
-const CID_KEY = "thai-tts-survey-client-id", GROUP_KEY = "thai-tts-survey-assigned-group";
+const CID_KEY="thai-tts-survey-client-id",GROUP_KEY="thai-tts-survey-assigned-group";
+const $=id=>document.getElementById(id);
+// decorative sound wave
+for(let i=0;i<22;i++){const b=document.createElement("i");b.style.height=(30+Math.round(Math.abs(Math.sin(i*1.7))*110))+"px";b.style.animationDelay=(i*0.07)+"s";$("wave").appendChild(b);}
 function clientId(){try{let v=localStorage.getItem(CID_KEY);if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));localStorage.setItem(CID_KEY,v);}return v;}catch{return "no-storage-"+Date.now().toString(36);}}
-function go(g){location.replace("group"+g+".html");}
-function manual(){document.getElementById("auto").style.display="none";document.getElementById("manual").style.display="block";}
-(async function(){
-  // Same device keeps the same group
-  try{const g=localStorage.getItem(GROUP_KEY);if(g==="A"||g==="B"){go(g);return;}}catch{}
+function saved(){try{const g=localStorage.getItem(GROUP_KEY);return g==="A"||g==="B"?g:"";}catch{return "";}}
+function go(g){location.href="group"+g+".html";}
+function manual(){$("start").classList.remove("busy");$("start").disabled=false;$("start-text").textContent="ลองอีกครั้ง →";$("manual").style.display="block";$("note").style.display="none";}
+// returning visitor: same set as before
+const prev=saved();
+if(prev){$("start-text").textContent="ทำต่อ (ชุด "+prev+") →";$("note").textContent="คุณเคยเริ่มทำไว้แล้ว คำตอบเดิมยังอยู่";}
+$("start").addEventListener("click",async()=>{
+  const g=saved();if(g){go(g);return;}
   if(!/^https:\/\/script\.google\.com\//.test(SUBMIT_URL)){manual();return;}
-  const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),10000);
+  $("start").disabled=true;$("start").classList.add("busy");$("start-text").textContent="กำลังจัดชุดให้คุณ…";
+  const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),10000);
   try{
-    const res=await fetch(SUBMIT_URL+"?action=assign&cid="+encodeURIComponent(clientId()),{signal:ctl.signal});
-    const r=await res.json();
+    const r=await (await fetch(SUBMIT_URL+"?action=assign&cid="+encodeURIComponent(clientId()),{signal:ctl.signal})).json();
     if(!r.ok||(r.group!=="A"&&r.group!=="B"))throw new Error(r.error||"bad response");
     try{localStorage.setItem(GROUP_KEY,r.group);}catch{}
     go(r.group);
   }catch(e){manual();}
-  finally{clearTimeout(timer);}
-})();
+  finally{clearTimeout(t);}
+});
 </script>
 </body>
 </html>

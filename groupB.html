@@ -6,10 +6,10 @@
 <meta name="color-scheme" content="light">
 <title>ทดสอบฟังเสียง AI ภาษาไทย — กลุ่ม B</title>
 <style>
-:root{--ink:#19372e;--muted:#687971;--line:#d8e1d8;--paper:#f7f8f3;--white:#fff;--green:#1f5c49;--pale:#e8f0e8;--gold:#b88845;--shadow:0 15px 40px rgba(17,52,39,.07)}
+:root{--ink:#1d1d24;--muted:#686872;--line:#e3e3e8;--paper:#f6f6f8;--white:#fff;--green:#e3000f;--pale:#fdecee;--gold:#e3000f;--shadow:0 15px 40px rgba(30,30,40,.06)}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 "Avenir Next",Avenir,"Segoe UI",Tahoma,"Noto Sans Thai",sans-serif}
-button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #d6ad67;outline-offset:2px}
-.stripe{height:6px;background:linear-gradient(90deg,var(--green) 0 80%,var(--gold) 80%)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ff6b76;outline-offset:2px}
+.stripe{height:6px;background:var(--green)}
 .shell{width:min(1420px,calc(100% - 56px));margin:0 auto}
 .masthead{display:flex;align-items:start;justify-content:space-between;gap:28px;padding:34px 0 23px}
 .eyebrow{color:var(--gold);font-weight:850;text-transform:uppercase;letter-spacing:.02em;font-size:12px}
@@ -17,45 +17,45 @@ h1{font:400 clamp(32px,3.5vw,50px)/1.13 Georgia,serif;letter-spacing:-.04em;marg
 .intro{font-size:15px;color:var(--muted);margin:0;max-width:715px}
 .tools{display:flex;flex-direction:column;gap:8px;min-width:250px}.tools .hint{text-align:center}
 .button{border:1px solid var(--line);color:var(--green);background:white;padding:11px 16px;border-radius:10px;font-weight:750;white-space:nowrap}
-.button:hover:not(:disabled){background:#edf3ec}.button.primary{background:var(--green);color:white;border-color:var(--green)}.button.primary:hover:not(:disabled){background:#144434}
-.hint{color:var(--muted);font-size:12px}#submit-status.ok{color:var(--green);font-weight:800}#submit-status.err{color:#a3402f;font-weight:800}.steps{display:flex;flex-wrap:wrap;gap:11px 24px;background:#e9efe8;border:1px solid #d5e0d4;border-radius:12px;padding:12px 18px;margin:0 0 20px;color:#4c6457;font-size:13px}
+.button:hover:not(:disabled){background:#fdf0f1}.button.primary{background:var(--green);color:white;border-color:var(--green)}.button.primary:hover:not(:disabled){background:#b8000c}
+.hint{color:var(--muted);font-size:12px}#submit-status.ok{color:var(--green);font-weight:800}#submit-status.err{color:#c2410c;font-weight:800}.steps{display:flex;flex-wrap:wrap;gap:11px 24px;background:#f3f3f6;border:1px solid #e2e2e8;border-radius:12px;padding:12px 18px;margin:0 0 20px;color:#55555f;font-size:13px}
 .steps strong{color:var(--ink)}.workspace{display:grid;grid-template-columns:250px minmax(0,1fr);align-items:start;gap:22px;padding:0 0 38px}
 .rail{position:sticky;top:16px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-.rail-head{display:flex;justify-content:space-between;font-weight:850}.progress{height:8px;background:#e8eee7;border-radius:30px;overflow:hidden;margin:13px 0 8px}.fill{background:var(--green);height:100%;width:0;transition:width .2s}
+.rail-head{display:flex;justify-content:space-between;font-weight:850}.progress{height:8px;background:#ececf0;border-radius:30px;overflow:hidden;margin:13px 0 8px}.fill{background:var(--green);height:100%;width:0;transition:width .2s}
 .rail small{color:var(--muted);display:block;margin:0 0 13px}.case-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.nav-btn{border:1px solid #dfe7dc;border-radius:9px;background:#f8faf7;color:#577066;font-weight:850;padding:9px 0;font-variant-numeric:tabular-nums}
+.nav-btn{border:1px solid #e2e2e7;border-radius:9px;background:#fafafb;color:#5c5c66;font-weight:850;padding:9px 0;font-variant-numeric:tabular-nums}
 .nav-btn:hover{border-color:var(--green)}.nav-btn.active{background:var(--green);color:white;border-color:var(--green)}
-.nav-btn.complete:not(.active){background:var(--pale);border-color:#c0d8c6;color:var(--green)}
+.nav-btn.complete:not(.active){background:var(--pale);border-color:#f6bcc2;color:var(--green)}
 .rail-note{color:var(--muted);font-size:12px;line-height:1.7;margin-top:19px;padding-top:14px;border-top:1px solid var(--line)}
 .content{min-width:0}.panel{border:1px solid var(--line);border-radius:17px;background:var(--white);box-shadow:var(--shadow);padding:clamp(18px,2.5vw,32px);margin-bottom:16px}
 .overline{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--gold);font-weight:900}
-.status{border-radius:20px;background:#f1f5ee;border:1px solid #dbe6da;color:#61776a;letter-spacing:normal;text-transform:none;padding:4px 11px}
-.status.done{background:#e6f1e7;color:var(--green)}
+.status{border-radius:20px;background:#f3f3f6;border:1px solid #e2e2e8;color:#62626c;letter-spacing:normal;text-transform:none;padding:4px 11px}
+.status.done{background:#fdecee;color:var(--green)}
 h2{font:400 30px Georgia,serif;margin:11px 0 8px}h3{font-size:17px;margin:0 0 7px;letter-spacing:-.02em}
-.transcript{background:#f0f5ed;border:1px solid #dfe9dc;border-radius:12px;padding:22px 24px;margin-top:13px}
+.transcript{background:#f6f6f8;border:1px solid #e6e6ea;border-radius:12px;padding:22px 24px;margin-top:13px}
 .thai{font:19px/1.95 Thonburi,"Noto Sans Thai",Tahoma,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}
 .take-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
 .take{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
-.take-head{background:#f4f7f1;border-bottom:1px solid var(--line);padding:13px 17px;display:flex;justify-content:space-between;align-items:center}
+.take-head{background:#f7f7f9;border-bottom:1px solid var(--line);padding:13px 17px;display:flex;justify-content:space-between;align-items:center}
 .take-head strong{font:400 24px Georgia,serif}.take-body{padding:17px}
 audio{width:100%;height:47px;accent-color:var(--green)}.duration{text-align:right;color:var(--muted);font-size:11px;margin:3px 0 15px}
-.take-score{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:9px 0;border-top:1px solid #edf0ea}
-.take-score span{font-size:12px;font-weight:800}.scale{display:flex;gap:4px}.score{width:33px;height:31px;border:1px solid #dce5da;border-radius:7px;background:#fafbf8;color:#557263;font-size:12px;font-weight:850}
+.take-score{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:9px 0;border-top:1px solid #eeeef1}
+.take-score span{font-size:12px;font-weight:800}.scale{display:flex;gap:4px}.score{width:33px;height:31px;border:1px solid #dfdfe5;border-radius:7px;background:#fafafb;color:#5a5a64;font-size:12px;font-weight:850}
 .score:hover{border-color:var(--green)}.score[aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}
-details{border:1px solid #e4e8df;border-radius:9px;margin-top:13px;padding:9px 11px}summary{cursor:pointer;color:#39594b;font-weight:800;font-size:12px}
-.issue-grid{display:grid;grid-template-columns:1fr;gap:6px;margin-top:12px}.check-issue{display:flex;align-items:center;gap:8px;font-size:12px;color:#586c60}.check-issue input{accent-color:var(--green)}
-.quality-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #edf1eb;padding:8px 0;font-size:12px}.quality-row:last-child{border:0}
-select{background:white;color:var(--ink);border:1px solid #d3dfd2;padding:7px 9px;border-radius:8px;max-width:100%}
-.verdict{background:#faf8f1;border:1px solid #ecdcb9;border-radius:13px;padding:21px;margin-bottom:15px}
+details{border:1px solid #e4e4e9;border-radius:9px;margin-top:13px;padding:9px 11px}summary{cursor:pointer;color:#3d3d47;font-weight:800;font-size:12px}
+.issue-grid{display:grid;grid-template-columns:1fr;gap:6px;margin-top:12px}.check-issue{display:flex;align-items:center;gap:8px;font-size:12px;color:#5d5d67}.check-issue input{accent-color:var(--green)}
+.quality-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #efeff2;padding:8px 0;font-size:12px}.quality-row:last-child{border:0}
+select{background:white;color:var(--ink);border:1px solid #d9d9e0;padding:7px 9px;border-radius:8px;max-width:100%}
+.verdict{background:#f7f7f9;border:1px solid #e4e4ea;border-radius:13px;padding:21px;margin-bottom:15px}
 .choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:13px 0 0}
-.choice{border-radius:9px;border:1px solid #dccda9;background:white;padding:12px;color:#7b6545;font-weight:850}
-.choice:hover{border-color:#b4843d}.choice[aria-pressed="true"]{background:#b08442;color:white;border-color:#b08442}
+.choice{border-radius:9px;border:1px solid #d6d6de;background:white;padding:12px;color:#3a3a44;font-weight:850}
+.choice:hover{border-color:#2b2b33}.choice[aria-pressed="true"]{background:#2b2b33;color:white;border-color:#2b2b33}
 .review-bottom{display:grid;grid-template-columns:220px 1fr;gap:15px;margin-top:22px}
-label.field{display:block;font-weight:750;margin-bottom:6px}textarea,input[type="text"]{width:100%;border:1px solid #cad9cb;background:white;border-radius:9px;color:var(--ink);padding:11px 12px}
+label.field{display:block;font-weight:750;margin-bottom:6px}textarea,input[type="text"]{width:100%;border:1px solid #d4d4dc;background:white;border-radius:9px;color:var(--ink);padding:11px 12px}
 textarea{min-height:92px;resize:vertical}.nav-footer{display:flex;justify-content:space-between;align-items:center;gap:10px}.nav-footer button{min-width:130px}
-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#76887b;font-size:11px;padding-bottom:30px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#8e8e98;font-size:11px;padding-bottom:30px}
 .button.big{display:block;width:100%;margin-top:14px;padding:15px;font-size:16px}
-#modal{position:fixed;inset:0;background:rgba(17,40,31,.45);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+#modal{position:fixed;inset:0;background:rgba(20,20,28,.5);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
 #modal.show{display:flex}.modal-box{background:#fff;border-radius:18px;padding:30px 28px 24px;max-width:420px;width:100%;text-align:center;box-shadow:0 25px 60px rgba(0,0,0,.25)}
 .modal-icon{font-size:46px;line-height:1;margin-bottom:10px}.modal-box h3{font-size:21px;margin:0 0 8px}.modal-box p{color:var(--muted);margin:0 0 20px;white-space:pre-line}
 .modal-box .button{min-width:140px;margin:4px}a.button{display:inline-block;text-decoration:none;text-align:center}
@@ -75,12 +75,12 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#
       <span class="hint" id="submit-status">คำตอบจะถูกส่งเมื่อกด "ส่งผลการประเมิน" เท่านั้น</span>
     </div>
   </header>
-  <div class="steps"><span><strong>01</strong> ฟังเสียง A และ B</span><span><strong>02</strong> เลือกว่าชอบเสียงไหน (จำเป็น)</span><span><strong>03</strong> ให้คะแนน / เขียนหมายเหตุ (ไม่บังคับ)</span><span><strong>04</strong> ครบ 10 ข้อ ใส่ชื่อด้านล่าง แล้วกด <strong>ส่งผลการประเมิน</strong></span></div>
+  <div class="steps"><span><strong>01</strong> ฟังเสียง A และ B</span><span><strong>02</strong> เลือกว่าชอบเสียงไหน (จำเป็น)</span><span><strong>03</strong> ให้คะแนน / เขียนหมายเหตุ (ไม่บังคับ)</span><span><strong>04</strong> ต้องเลือกครบ 10 ข้อ แล้วใส่ชื่อด้านล่าง แล้วกด <strong>ส่งผลการประเมิน</strong></span></div>
   <main class="workspace">
     <aside class="rail" aria-label="เลือกข้อ">
       <div class="rail-head"><span>ความคืบหน้า</span><span id="count">0 / 10</span></div>
       <div class="progress"><div class="fill" id="fill"></div></div>
-      <small>สีเขียว = ข้อที่เลือกแล้ว</small>
+      <small>สีชมพู = ข้อที่เลือกแล้ว · สีแดง = ข้อที่เปิดอยู่</small>
       <div class="case-nav" id="case-nav"></div>
       <div class="rail-note">ระบบจะไม่บอกว่า A หรือ B มาจากระบบไหน คำตอบบันทึกอัตโนมัติในเบราว์เซอร์นี้ ปิดแล้วกลับมาทำต่อได้ (ใช้เครื่องและเบราว์เซอร์เดิม) ส่งซ้ำได้ ระบบจะใช้ผลล่าสุด</div>
     </aside>
@@ -111,7 +111,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#
         </section>
       </div>
       <section class="panel" style="margin-top:16px">
-        <div class="verdict"><h3>ชอบเสียงไหนมากกว่า? <span style="color:#a3402f">*</span></h3><span class="hint">ดูการออกเสียง วรรณยุกต์ ความเป็นธรรมชาติ และความเหมือนเสียงเอมี่</span>
+        <div class="verdict"><h3>ชอบเสียงไหนมากกว่า? <span style="color:#c2410c">*</span></h3><span class="hint">ดูการออกเสียง วรรณยุกต์ ความเป็นธรรมชาติ และความเหมือนเสียงเอมี่</span>
           <div class="choice-grid" id="winner-buttons">
             <button class="choice" type="button" data-winner="A">เสียง A</button>
             <button class="choice" type="button" data-winner="B">เสียง B</button>
@@ -128,7 +128,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#
           </div>
         </div>
       </section>
-      <section class="panel"><label class="field" for="reviewer">ชื่อผู้ประเมิน <span style="color:#a3402f">*</span> (ต้องใส่ก่อนส่งผล)</label><input id="reviewer" type="text" maxlength="100" placeholder="ชื่อเล่น หรือชื่อ-นามสกุล"><button id="submit-bottom" class="button primary big" type="button">✓ ส่งผลการประเมิน</button><div class="hint" style="margin-top:8px">ทำครบแล้ว ใส่ชื่อ แล้วกดปุ่มนี้ ระบบจะขึ้นหน้าต่างยืนยันเมื่อส่งสำเร็จ</div></section>
+      <section class="panel"><label class="field" for="reviewer">ชื่อผู้ประเมิน <span style="color:#c2410c">*</span> (ต้องใส่ก่อนส่งผล)</label><input id="reviewer" type="text" maxlength="100" placeholder="ชื่อเล่น หรือชื่อ-นามสกุล"><button id="submit-bottom" class="button primary big" type="button">✓ ส่งผลการประเมิน</button><div class="hint" style="margin-top:8px">ทำครบแล้ว ใส่ชื่อ แล้วกดปุ่มนี้ ระบบจะขึ้นหน้าต่างยืนยันเมื่อส่งสำเร็จ</div></section>
       <div class="nav-footer"><button class="button" id="previous" type="button">← ข้อก่อนหน้า</button><span class="hint" id="saved">บันทึกอัตโนมัติในเบราว์เซอร์นี้</span><button class="button primary" id="next" type="button">ข้อถัดไป →</button></div>
     </div>
   </main>
@@ -169,7 +169,7 @@ function refresh(){const c=CASES[active],a=answer(c.id);document.querySelectorAl
  document.querySelectorAll(".check-issue input").forEach(x=>x.checked=Array.isArray(a.takes?.[x.dataset.take]?.flags)&&a.takes[x.dataset.take].flags.includes(x.value));
  document.querySelectorAll("[data-winner]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.winner===a.winner)));
  $("main-issue").value=a.main_issue||"";$("notes").value=a.note||"";
- const count=CASES.filter(c=>completed(answer(c.id))).length;$("count").textContent=count+" / "+CASES.length;$("fill").style.width=(100*count/CASES.length)+"%";
+ const count=CASES.filter(c=>completed(answer(c.id))).length;$("count").textContent=count+" / "+CASES.length;for(const id of ["submit","submit-bottom"]){const b=$(id);if(b&&!b.disabled)b.textContent=count<CASES.length?"✓ ส่งผลการประเมิน ("+count+"/"+CASES.length+")":"✓ ส่งผลการประเมิน";}$("fill").style.width=(100*count/CASES.length)+"%";
  $("case-status").textContent=completed(a)?"เลือกแล้ว ✓":"ยังไม่ได้เลือก";$("case-status").classList.toggle("done",completed(a));
  document.querySelectorAll(".nav-btn").forEach((b,i)=>{b.classList.toggle("active",i===active);b.classList.toggle("complete",completed(answer(CASES[i].id)));b.setAttribute("aria-current",String(i===active));});save();
 }
@@ -186,12 +186,12 @@ function buildJSON(){reviewer=$("reviewer").value.trim();const reviews=CASES.map
  return {schema_version:"2.0",review_kind:"Thai TTS pairwise blind A/B",batch:BATCH,group:GROUP,reviewer,client_id:clientId(),exported_at:new Date().toISOString(),user_agent:navigator.userAgent,total_cases:CASES.length,completed_cases:reviews.filter(x=>x.reviewed).length,reviews};
 }
 function showModal(icon,title,text,other){$("modal-other").style.display=other?"inline-block":"none";$("modal-icon").textContent=icon;$("modal-title").textContent=title;$("modal-text").textContent=text;$("modal").classList.add("show");$("modal-ok").focus();}
-function closeModal(){$("modal").classList.remove("show");if($("modal").dataset.focus==="reviewer"){$("reviewer").focus();$("modal").dataset.focus="";}}
+function closeModal(){$("modal").classList.remove("show");if($("modal").dataset.jump){const j=Number($("modal").dataset.jump);$("modal").dataset.jump="";show(j,true);return;}if($("modal").dataset.focus==="reviewer"){$("reviewer").focus();$("modal").dataset.focus="";}}
 async function submitJSON(){const st=$("submit-status"),btns=[$("submit"),$("submit-bottom")];st.className="hint";
  if(!/^https:\/\/script\.google\.com\//.test(SUBMIT_URL)){showModal("⚠️","ยังส่งไม่ได้","หน้านี้ยังไม่ได้ตั้งค่าการส่งผล กรุณาแจ้งผู้ดูแล");return;}
  const json=buildJSON();
  if(!json.reviewer){$("modal").dataset.focus="reviewer";showModal("✍️","กรุณาใส่ชื่อก่อน","ช่อง \"ชื่อผู้ประเมิน\" อยู่ด้านล่างของหน้า");return;}
- if(json.completed_cases<CASES.length&&!confirm("คุณเลือกไปแล้ว "+json.completed_cases+" จาก "+CASES.length+" ข้อ ต้องการส่งเลยหรือไม่?"))return;
+ if(json.completed_cases<CASES.length){const miss=CASES.map((c,i)=>completed(answer(c.id))?null:String(i+1).padStart(2,"0")).filter(Boolean);const first=CASES.findIndex(c=>!completed(answer(c.id)));$("modal").dataset.jump=String(first);showModal("📝","ยังทำไม่ครบ "+CASES.length+" ข้อ","เลือกเสียงที่ชอบแล้ว "+json.completed_cases+" / "+CASES.length+" ข้อ\nยังเหลือข้อ: "+miss.join(", ")+"\n\nกด ตกลง เพื่อไปข้อที่ยังไม่ได้ทำ");return;}
  btns.forEach(b=>{b.disabled=true;b.dataset.label=b.textContent;b.textContent="กำลังส่ง…";});st.textContent="กำลังส่ง…";
  try{const res=await fetch(SUBMIT_URL,{method:"POST",body:JSON.stringify(json)});const r=await res.json();
   if(!r.ok)throw new Error(r.error||"Server error");
