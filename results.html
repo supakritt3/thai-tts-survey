@@ -82,7 +82,7 @@ const $=id=>document.getElementById(id);
 let combined=null;
 const MIN_VOTES=3;   // a sentence with fewer votes than this is flagged
 let filter="all";
-try{$("url").value=localStorage.getItem("tts-survey-results-url")||"";}catch{}
+$("url").value="https://script.google.com/macros/s/AKfycbwuIJVKNl0BVQQIFOmiEeYG4z8MXfH0KAPljUZ7ii1TrK1HwpLlzuiYLm2v4UtQHYuZ/exec";
 function msg(t,cls){$("msg").textContent=t;$("msg").className=cls||"muted";}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 async function load(){

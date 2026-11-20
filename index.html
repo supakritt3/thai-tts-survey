@@ -40,7 +40,7 @@ p{color:var(--muted);margin:0 0 18px}
 <script>
 "use strict";
 // ===== SETUP: paste your Google Apps Script Web App URL here (ends with /exec) =====
-const SUBMIT_URL = "PASTE_APPS_SCRIPT_URL_HERE";
+const SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwuIJVKNl0BVQQIFOmiEeYG4z8MXfH0KAPljUZ7ii1TrK1HwpLlzuiYLm2v4UtQHYuZ/exec";
 // ==================================================================================
 const CID_KEY = "thai-tts-survey-client-id", GROUP_KEY = "thai-tts-survey-assigned-group";
 function clientId(){try{let v=localStorage.getItem(CID_KEY);if(!v){v=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));localStorage.setItem(CID_KEY,v);}return v;}catch{return "no-storage-"+Date.now().toString(36);}}
